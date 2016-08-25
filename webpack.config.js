@@ -20,7 +20,7 @@ var config = {
     loaders: [
       { test: /\.ts$/,   loader: 'awesome-typescript-loader' },
       { test: /\.json$/, loader: 'json-loader' },
-      { test: /\.html/,  loader: 'raw-loader' },
+      { test: /\.html$/,  loader: 'raw-loader' },
       { test: /\.css$/,  loader: 'to-string-loader!css-loader' },
     ]
   },
