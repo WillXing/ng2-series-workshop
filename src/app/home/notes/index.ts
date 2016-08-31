@@ -8,8 +8,10 @@ import {NoteCard} from "./note-card";
   template: require('./notes.html')
 })
 export class Notes {
-  notes = [{title: 't11', value: 'v'},
-    {title: 't22', value: 'v2'}]
+  notes = [
+    {title: 't11', value: 'v'},
+    {title: 't22', value: 'v2'}
+  ]
 
   onEventChecked(note, i) {
       this.notes.splice(i, 1)
