@@ -15,7 +15,7 @@ export class ApiService {
   }
 
   private getJson(response: Response) {
-    response.json()
+    return response.json()
   }
 
   private checkForError(response: Response): Response {
@@ -31,7 +31,7 @@ export class ApiService {
   get(path: string): Observable<any> {
     return this.http.get(`${this.api_url}${path}`, {headers: this.headers})
       .map(this.checkForError)
-      .catch( err => {Observable.throw(err)})
+      .catch( err => Observable.throw(err))
       .map(this.getJson)
   }
 
@@ -40,7 +40,7 @@ export class ApiService {
       , JSON.stringify(body)
       , {headers: this.headers})
       .map(this.checkForError)
-      .catch( err => {Observable.throw(err)})
+      .catch( err => Observable.throw(err))
       .map(this.getJson)
   }
 }
