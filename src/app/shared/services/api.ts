@@ -9,7 +9,7 @@ export class ApiService {
     Accept: 'application/json'
   })
 
-  api_url: string = 'http://localhost:3500/'
+  api_url: string = 'http://localhost:3500'
 
   constructor(private http: Http) {
   }
@@ -41,6 +41,13 @@ export class ApiService {
       , {headers: this.headers})
       .map(this.checkForError)
       .catch( err => Observable.throw(err))
+      .map(this.getJson)
+  }
+
+  delete(path: string): Observable<any> {
+    return this.http.delete(`${this.api_url}${path}`, {headers: this.headers})
+      .map(this.checkForError)
+      .catch(err => Observable.throw(err))
       .map(this.getJson)
   }
 }
