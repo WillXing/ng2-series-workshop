@@ -11,6 +11,6 @@ bootstrap(App, [
   , disableDeprecatedForms()
   , provideForms()
   , ...providers
-  , {provider: LocationStrategy, useClass: HashLocationStrategy}
+  , {provide: LocationStrategy, useClass: HashLocationStrategy}
   , provideRouter(router)
 ]);
